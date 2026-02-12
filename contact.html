@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="galaxy 2.mp4" type="video/mp4">
+</video>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#0a0f1e;
+  --card-bg:#11182f;
+  --accent1:#6affb3;
+  --accent2:#7ee7ff;
+  font-family: Inter, system-ui;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* derrière tout */
+}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at top, #141b35, var(--bg));
+  color:white;
+  font-family: Inter, system-ui;
+}
+
+/* --- NAVIGATION --- */
+nav{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  padding:18px 40px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  background:rgba(10,15,30,0.45);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:50;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:500;
+  transition:0.3s;
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:black;
+  box-shadow:0 0 10px rgba(130,255,210,0.5);
+}
+
+/* --- HEADER --- */
+header{
+  text-align:center;
+  padding:120px 20px 40px;
+}
+header h1{
+  font-size:42px;
+  letter-spacing:2px;
+  margin:0;
+  text-transform:uppercase;
+}
+
+/* --- SECTION CONTACT --- */
+.contact-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:40px;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+/* --- LEFT SIDE (INFO) --- */
+.contact-info{
+  width:420px;
+  background:var(--card-bg);
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.05);
+  text-align:center;
+}
+
+.contact-info h2{
+  color:var(--accent1);
+  font-size:26px;
+}
+
+.contact-info p{
+  font-size:18px;
+  line-height:1.6;
+  color:#dce3ff;
+  margin-bottom:25px;
+}
+
+.contact-info .details{
+  margin-top:30px;
+  font-size:16px;
+  line-height:1.8;
+  color:#dce3ff;
+}
+
+/* --- RIGHT SIDE (FORM) --- */
+.contact-form{
+  width:520px;
+  background:var(--card-bg);
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.contact-form label{
+  font-size:15px;
+  color:#dce3ff;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0 20px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:#0d1326;
+  color:white;
+  font-size:15px;
+}
+
+.contact-form textarea{
+  height:150px;
+  resize:none;
+}
+
+.contact-form button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:40px;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:black;
+  box-shadow:0 0 18px rgba(130,255,200,0.4);
+  transition:0.3s;
+}
+
+.contact-form button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 28px rgba(130,255,200,0.8);
+}
+
+/* --- SOCIAL BUTTONS --- */
+.social-buttons{
+  margin-top:35px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.btn-social{
+  display:block;
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+  font-size:18px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.25s;
+  color:white;
+  border:2px solid transparent;
+}
+
+/* LinkedIn (Bleu néon) */
+.linkedin{
+  border-color:#0a66c2;
+  box-shadow:0 0 12px rgba(10,102,194,0.7);
+}
+.linkedin:hover{
+  background:#0a66c2;
+  box-shadow:0 0 22px rgba(10,102,194,1);
+}
+
+/* Indeed (Cyan néon) */
+.indeed{
+  border-color:#00eaff;
+  box-shadow:0 0 12px rgba(0,234,255,0.7);
+}
+.indeed:hover{
+  background:#00eaff;
+  color:black;
+  box-shadow:0 0 22px rgba(0,234,255,1);
+}
+
+/* HelloWork (Blanc néon) */
+.hellowork{
+  border-color:#ffffff;
+  box-shadow:0 0 14px rgba(255,255,255,0.8);
+}
+.hellowork:hover{
+  background:white;
+  color:black;
+  box-shadow:0 0 22px rgba(255,255,255,1);
+}
+
+/* Discord (Violet néon) */
+.discord{
+  border-color:#8b5cff;
+  box-shadow:0 0 14px rgba(139,92,255,0.8);
+}
+.discord:hover{
+  background:#8b5cff;
+  color:black;
+  box-shadow:0 0 24px rgba(139,92,255,1);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="portfolio.html">Accueil</a>
+  <a href="veille.html">Veille Technologique</a>
+  <a href="formation.html">Formation</a>
+  <a href="parcours.html">Parcours</a>
+  <a href="profil.html">Profil</a>
+  <a href="E4.html">Epreuve E4</a>
+</nav>
+
+<header>
+  <h1>Contact</h1>
+</header>
+
+<div class="contact-wrapper">
+
+  <!-- LEFT COLUMN : TEXT + INFO -->
+  <div class="contact-info">
+    <h2>Restons en contact</h2>
+    <p>
+      N'hésitez pas à me contacter pour discuter de vos projets de développement web 
+      ou en savoir plus sur ma personne !
+    </p>
+
+    <div class="details">
+      📞 +33 06 20 95 88 79<br>
+      ✉️ oumarahne0204@gmail.com<br>
+      📍 91200, Athis Mons, France
+    </div>
+		<div class="social-buttons">
+    <a href="https://www.linkedin.com/in/oumar-ahne-043312234/" class="btn-social linkedin">LinkedIn</a>
+    <a href="https://profile.indeed.com/?hl=fr_FR&co=FR&from=gnav-homepage" class="btn-social indeed">Indeed</a>
+    <a href="https://www.hellowork.com/fr-fr/candidat/mon-profil.html" class="btn-social hellowork">HelloWork</a>
+    <a href="TON_LIEN_DISCORD" class="btn-social discord">Discord</a>
+</div>
+  </div>
+
+  <!-- RIGHT COLUMN : FORM -->
+  <div class="contact-form">
+    <form>
+      <label>Prénom</label>
+      <input type="text" name="prenom" placeholder="Votre prénom">
+
+      <label>Nom de famille</label>
+      <input type="text" name="nom" placeholder="Votre nom">
+
+      <label>E-mail *</label>
+      <input type="email" name="email" placeholder="Votre email" required>
+
+      <label>Message</label>
+      <textarea name="message" placeholder="Votre message"></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Formation — BTS SIO</title>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="galaxy 2.mp4" type="video/mp4">
+</video>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#0a0f1e;
+  --card-bg:#11182f;
+  --accent1:#6affb3;
+  --accent2:#7ee7ff;
+  font-family: Inter, system-ui;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* derrière tout */
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(circle at top, #141b35, var(--bg));
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+nav{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  padding:18px 40px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  background:rgba(10,15,30,0.45);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:50;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:500;
+  transition:0.3s;
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:black;
+  box-shadow:0 0 10px rgba(130,255,210,0.5);
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:40px 20px 10px;
+  max-width:800px;
+}
+
+header h1{
+  margin:0;
+  font-size:38px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+header p{
+  margin-top:18px;
+  font-size:17px;
+  color:#d6dbff;
+  line-height:1.6;
+}
+
+
+/* Container centrée */
+.container{
+  display:flex;
+  gap:60px;
+  perspective:1400px;
+  margin-top:40px;
+}
+
+.card{
+  width:340px;
+  height:520px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform 1s cubic-bezier(.2,.9,.3,1);
+  cursor:pointer;
+}
+
+.card.is-flipped{
+  transform:rotateY(180deg);
+}
+
+/* Faces */
+.face{
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  backface-visibility:hidden;
+  overflow:hidden;
+}
+
+.front{
+  background:linear-gradient(145deg,#141b3a,#0b1025);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.front.slam{ color:var(--accent1); }
+.front.sisr{ color:var(--accent2); }
+
+.back{
+  background:var(--card-bg);
+  transform:rotateY(180deg);
+  padding:26px;
+  overflow-y:auto;
+}
+
+.back h2{
+  margin-top:0;
+  text-align:center;
+  letter-spacing:1px;
+}
+
+.back p{
+  font-size:14.5px;
+  line-height:1.7;
+  color:#d6dbff;
+}
+
+
+
+.card::after{
+  content:'';
+  position:absolute;
+  inset:-10px;
+  border-radius:20px;
+  filter:blur(22px);
+  opacity:0.25;
+  z-index:-1;
+}
+.card.slam::after{ background:var(--accent1); }
+.card.sisr::after{ background:var(--accent2); }
+
+.back::-webkit-scrollbar{ width:6px; }
+.back::-webkit-scrollbar-thumb{
+  background:#2e3680;
+  border-radius:10px;
+}
+</style>
+
+</head>
+
+<body>
+<nav>
+  <a href="portfolio.html">Accueil</a>
+  <a href="veille.html">Veille Technologique</a>
+  <a href="E4.html">Epreuve E4</a>
+  <a href="parcours.html">Parcours</a>
+  <a href="profil.html">Profil</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<header>
+    <h1>QU'EST-CE QUE LE BTS SIO ?</h1>
+
+    <p>
+        Le BTS SIO s'adresse à ceux qui souhaitent se former en deux ans aux métiers 
+        d’administrateur réseau ou de développeur. Et ainsi par la suite intégrer 
+        directement le marché du travail ou continuer des études dans le domaine 
+        de l'informatique.
+    </p>
+
+</header>
+
+<div class="container">
+
+  <!-- SLAM -->
+  <div class="card slam">
+    <div class="face front slam">SLAM</div>
+    <div class="face back">
+      <h2>OPTION SLAM</h2>
+      <p>
+        L’acronyme SLAM signifie « Solutions Logicielles et Applications Métier ».
+        Cette option du BTS SIO est destinée aux étudiants qui souhaitent s’orienter
+        vers les métiers liés à la conception et à la maintenance de programmes applicatifs.
+      </p>
+      <p>
+        Grâce à des cours spécifiques, les diplômés seront capables de gérer un parc
+        informatique ou d’administrer un réseau au sein d’une entreprise.
+      </p>
+      <p>
+        Ils pourront également diriger l’intégration, la sécurisation et la configuration
+        des serveurs, mais aussi des postes clients et des équipements d’interconnexion.
+      </p>
+    </div>
+  </div>
+
+  <!-- SISR -->
+  <div class="card sisr">
+    <div class="face front sisr">SISR</div>
+    <div class="face back">
+      <h2>OPTION SISR</h2>
+      <p>
+        L’acronyme SISR signifie « Solutions d’Infrastructure, Systèmes et Réseaux ».
+        L’option SISR est destinée aux étudiants qui s’orientent vers les métiers liés
+        à la conception et à la maintenance d’infrastructures réseaux.
+      </p>
+      <p>
+        Assurer la sécurité, la maintenance et l’installation des réseaux et des équipements
+        informatiques font partie des principales missions des futurs administrateurs,
+        techniciens ou pilotes d’exploitation.
+      </p>
+      <p>
+        Des cours plus généraux complètent la formation pour apporter des compétences
+        plus globales et permettre aux diplômés d’être opérationnels dans toute entreprise.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    card.classList.toggle('is-flipped');
+  });
+});
+</script>
+
+</body>
+</html>
+

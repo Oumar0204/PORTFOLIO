@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Formation — BTS SIO</title>
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="galaxy 2.mp4" type="video/mp4">
+</video>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#0a0f1e;
+  --card-bg:#11182f;
+  --accent1:#6affb3;
+  --accent2:#7ee7ff;
+  font-family: Inter, system-ui;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* derrière tout */
+}
+
+body{
+  margin:0;
+  background:radial-gradient(circle at top, #141b35, var(--bg));
+  color:white;
+}
+
+/* MENU */
+nav{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  padding:18px 40px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  background:rgba(10,15,30,0.45);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:50;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:500;
+  transition:0.3s;
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:black;
+  box-shadow:0 0 10px rgba(130,255,210,0.5);
+}
+
+/* TITRE */
+header{
+  padding-top:140px;
+  text-align:center;
+}
+
+header h1{
+  font-size:42px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* CARDS GRID */
+.cards-container{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:35px;
+  padding:40px;
+  perspective:1400px;
+}
+
+/* FLIP CARD */
+.card{
+  width:100%;
+  height:540px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform 1s cubic-bezier(.2,.9,.3,1);
+  cursor:pointer;
+}
+
+.card.is-flipped{
+  transform:rotateY(180deg);
+}
+
+/* Faces */
+.face{
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+/* FRONT */
+.front{
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.front h2{
+  font-size:32px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:white;
+  background:rgba(0,0,0,0.5);
+  padding:12px 25px;
+  border-radius:12px;
+  backdrop-filter:blur(4px);
+}
+
+/* BACK */
+.back{
+  background:var(--card-bg);
+  transform:rotateY(180deg);
+  padding:28px;
+  overflow-y:auto;
+}
+
+.back h3{
+  text-align:center;
+  margin-top:0;
+  letter-spacing:1px;
+  font-size:22px;
+}
+
+.back p{
+  font-size:15px;
+  line-height:1.7;
+  color:#d6dbff;
+}
+
+/* Scrollbar */
+.back::-webkit-scrollbar{ width:6px; }
+.back::-webkit-scrollbar-thumb{
+  background:#2e3680;
+  border-radius:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .cards-container{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:720px){
+  .cards-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+  <a href="portfolio.html">Accueil</a>
+  <a href="veille.html">Veille Technologique</a>
+  <a href="formation.html">Formation</a>
+  <a href="E4.html">Epreuve E4</a>
+  <a href="profil.html">Profil</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- TITRE -->
+<header>
+  <h1>Parcours, Diplômes & Compétences</h1>
+</header>
+
+
+<!-- CARDS -->
+<div class="cards-container">
+
+  <!-- FORMATION -->
+  <div class="card">
+    <div class="face front" style="background-image:url('images/formation.jpg');">
+      <h2>Formation</h2>
+    </div>
+    <div class="face back">
+      <h3>Mon Parcours Scolaire</h3>
+      <p><strong>Lycée Clément Ader</strong><br>2019 - 2022</p>
+      <p><strong>IUT d'Orsay</strong><br>2022 - 2024</p>
+      <p><strong>Lycée Charles de Foucauld</strong><br>2024 - 2026</p>
+    </div>
+  </div>
+
+  <!-- DIPLOMES -->
+  <div class="card">
+    <div class="face front" style="background-image:url('images/diplomes.jpg');">
+      <h2>Diplômes</h2>
+    </div>
+    <div class="face back">
+      <h3>Mes Diplômes</h3>
+      <p><strong>Baccalauréat Technologique STI2D</strong></p>
+      <p>Option SIN – Mention Assez Bien</p>
+      <br>
+      <p><strong>Certification PIX</strong></p>
+      <p>Niveau numérique certifié</p>
+    </div>
+  </div>
+
+  <!-- COMPETENCES -->
+  <div class="card">
+    <div class="face front" style="background-image:url('images/competences.jpg');">
+      <h2>Compétences</h2>
+    </div>
+    <div class="face back">
+      <h3>Techniques & Langages</h3>
+      <p>✔ C / C# / C++</p>
+      <p>✔ HTML / CSS</p>
+      <p>✔ Java</p>
+      <p>✔ Python</p>
+      <p>✔ Bases de données</p>
+      <p>✔ PHP</p>
+    </div>
+  </div>
+
+  <!-- PROJETS -->
+  <div class="card">
+    <div class="face front" style="background-image:url('images/projets.jpg');">
+      <h2>Projets</h2>
+    </div>
+    <div class="face back">
+      <h3>Réalisations</h3>
+      <p>✔ Jeu de cartes en C++</p>
+      <p>✔ Site Web complet</p>
+      <p>✔ Application JO 2024 en Java</p>
+      <p>✔ Base de données Stellantis</p>
+	  <p>✔ Portfolio</p>
+	  <p>✔ Projet Parking</p>
+	  <p>✔ Start-Up SecureCloud Pro</p>
+	  <p>✔ Création de la base de donnée d'upgrade security</p>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    card.classList.toggle('is-flipped');
+  });
+});
+</script>
+
+</body>
+</html>

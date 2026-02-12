@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Veille technologique</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="galaxy 2.mp4" type="video/mp4">
+</video>
+
+<style>
+:root{
+  --bg:#0a0f1e;
+  --accent1:#6affb3;
+  --accent2:#7ee7ff;
+  font-family: Inter, system-ui;
+}
+
+#bg-video{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:rgba(5,8,20,0.6);
+  z-index:-1;
+}
+
+body{
+  margin:0;
+  color:white;
+}
+
+/* MENU */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 40px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  background:rgba(10,15,30,0.45);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:50;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  padding:6px 12px;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:black;
+  box-shadow:0 0 10px rgba(130,255,210,0.5);
+}
+
+/* HEADER */
+header{
+  padding-top:140px;
+  text-align:center;
+}
+
+header h1{
+  font-size:42px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* CONTENT */
+.section{
+  max-width:900px;
+  margin:60px auto;
+  padding:40px;
+  background:rgba(15,20,45,0.6);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+.section h2{
+  text-align:center;
+  font-size:26px;
+  margin-bottom:25px;
+  color:var(--accent1);
+}
+
+.section p{
+  font-size:16px;
+  line-height:1.8;
+  color:#d6dbff;
+  text-align:justify;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.news-card {
+  background: rgba(20, 30, 60, 0.7);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+}
+
+.news-card:hover {
+  transform: scale(1.04);
+}
+
+.news-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  margin: 10px;
+  color: var(--accent1);
+}
+
+.news-card a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+</style>
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const articles = [
+    {
+      title: "IA générative alliée des développeurs, pas un substitut",
+      url: "https://www.lemondeinformatique.fr/actualites/lire-ia-generative-alliee-des-developpeurs-pas-un-substitut-98293.html",
+      img: "lemondeinformatique.png"
+    },
+    {
+      title: "Programmer avec l’IA : simple et risqué",
+      url: "https://lactualite.com/techno/programmer-avec-lia-a-la-fois-simple-et-risque/",
+      img: "lactualite.jpg"
+    },
+    {
+      title: "IA copilote : code & développement web",
+      url: "https://www.blogdumoderateur.com/ia-copilote-code-developpement-web-nouvelle-ere/",
+      img: "blogdumoderateur.jpg"
+    },
+    {
+      title: "IA : mutation invisible du métier de développeur",
+      url: "https://www.informatiquenews.fr/ia-cette-mutation-invisible-qui-transforme-le-metier-de-developpeur-olivier-roger-boond-108528",
+      img: "informatiquenews.jpg"
+    }
+  ];
+
+  const container = document.querySelector(".news-container");
+
+  if (!container) {
+    console.error("news-container introuvable");
+    return;
+  }
+
+  articles.forEach(article => {
+    const card = document.createElement("div");
+    card.className = "news-card";
+
+    card.innerHTML = `
+      <a href="${article.url}" target="_blank">
+        <img src="${article.img}" alt="${article.title}">
+        <h3>${article.title}</h3>
+      </a>
+    `;
+
+    container.appendChild(card);
+  });
+
+});
+</script>
+
+
+<body>
+
+<!-- MENU -->
+<nav>
+  <a href="portfolio.html">Accueil</a>
+  <a href="parcours.html">Parcours</a>
+  <a href="formation.html">Formation</a>
+  <a href="E4.html">Epreuve E4</a>
+  <a href="profil.html">Profil</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- TITRE -->
+<header>
+  <h1>Veille technologique</h1>
+</header>
+
+<!-- CONTENT -->
+<section class="section">
+  <h2>Qu’est-ce qu’une veille technologique</h2>
+  <p>
+    Une veille technologique a pour principe d’identifier ou d’anticiper les innovations
+    par secteurs d’activité. Elle consiste à surveiller l’évolution des technologies,
+    des outils et des pratiques afin de rester informé des changements pouvant impacter
+    un domaine professionnel.
+  </p>
+
+  <p>
+    La veille technologique est un processus systématique de collecte, d’analyse et de
+    diffusion d’informations sur les innovations et les avancées technologiques.
+    Elle permet aux entreprises de rester informées des dernières tendances et de
+    prendre des décisions stratégiques éclairées.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Le sujet de ma veille technologique</h2>
+  <p>
+    Le thème que j’ai choisi pour ma veille est : « L’Intelligence Artificielle est le futur du développement Logiciel ? ».
+  </p>
+  <h3>Points Negatif</h2>
+  <p>
+    Plusieur outils d'IA génératives tel que ChatGPT, Gemini ou d’autres, 
+	joue un rôle de plus en plus important en informatique. 
+	Notament danss le domaine du développement web et Logiciel. Ils nous permettent d'avancer plus rapidement dans les projets
+	des développeurs et de nous faciliter la tâche. 
+  </p>
+  <h3>Points Negatif</h2>
+  <p>
+    Tout comme nous, la technologie et donc l'IA ne cesse d'évoluer. Très bientôt,
+	il sera facile à n'importe quel individu de créer un logiciel simplement à l'aide de l'IA.
+	Très bientôt, le sujet de développeur commencera à s'effacer car la machine effectura l'entierté
+	de la tâche à nôtre place. De plus, les développeur seront tellement dépendant de l'IA qu'ils risques
+	de ne plus se rappeler de simple commande basiques.
+  </p>
+  <h3>Conseil</h2>
+  <p>Pour les jeunes informaticiens interressé par le métier de développeur web, il est vivement
+  recommander de commencer à se spécialisé dans l'Intelligence Artificiel. De ce fait, il nous 
+  sera toujour possible de poursuivre nôtre métier sans risque de se faire écarté par cette dernière.
+</section>
+
+<section class="section" id="actualites-ia">
+  <h2>Dernières actualités IA & Développement Web</h2>
+  <div class="news-container"></div>
+</section>
+</body>
+
+</html>

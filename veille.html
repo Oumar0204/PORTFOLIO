@@ -3,13 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Veille technologique</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- VIDEO BACKGROUND -->
-<video autoplay muted loop playsinline id="bg-video">
-  <source src="galaxy 2.mp4" type="video/mp4">
-</video>
 
 <style>
 :root{
@@ -54,6 +48,7 @@ nav{
   backdrop-filter:blur(8px);
   border-bottom:1px solid rgba(255,255,255,0.08);
   z-index:50;
+  box-sizing:border-box;
 }
 
 nav a{
@@ -101,6 +96,11 @@ header h1{
   color:var(--accent1);
 }
 
+.section h3{
+  color:var(--accent2);
+  margin-top:25px;
+}
+
 .section p{
   font-size:16px;
   line-height:1.8;
@@ -108,70 +108,191 @@ header h1{
   text-align:justify;
 }
 
-.news-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+.news-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:20px;
+  margin-top:20px;
 }
 
-.news-card {
-  background: rgba(20, 30, 60, 0.7);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.2s;
+.news-card{
+  background:rgba(20, 30, 60, 0.7);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0, 0, 0, 0.4);
+  transition:transform 0.2s;
 }
 
-.news-card:hover {
-  transform: scale(1.04);
+.news-card:hover{
+  transform:scale(1.04);
 }
 
-.news-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.news-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
 }
 
-.news-card h3 {
-  font-size: 18px;
-  margin: 10px;
-  color: var(--accent1);
+.news-card h3{
+  font-size:18px;
+  margin:10px;
+  color:var(--accent1);
 }
 
-.news-card a {
-  text-decoration: none;
-  color: #ffffff;
+.news-card a{
+  text-decoration:none;
+  color:#ffffff;
+  display:block;
 }
 
+.news-date{
+  margin:0 10px 12px;
+  color:#bfc8ff;
+  font-size:13px;
+}
+
+.info-text{
+  color:#d6dbff;
+  text-align:center;
+}
 </style>
 </head>
+
+<body>
+
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="galaxy 2.mp4" type="video/mp4">
+</video>
+
+<nav>
+  <a href="portfolio.html">Accueil</a>
+  <a href="parcours.html">Parcours</a>
+  <a href="formation.html">Formation</a>
+  <a href="E5.html">Epreuve E5</a>
+  <a href="profil.html">Profile</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Veille technologique</h1>
+</header>
+
+<section class="section">
+  <h2>Qu’est-ce qu’une veille technologique</h2>
+  <p>
+    La veille technologique est une démarche qui consiste à rechercher, collecter,
+    analyser et exploiter des informations sur les évolutions techniques, numériques
+    et professionnelles d’un domaine précis. Elle permet de suivre les innovations,
+    les nouveaux outils, les nouvelles méthodes de travail ainsi que les changements
+    qui peuvent avoir un impact direct sur un métier ou sur une entreprise.
+  </p>
+
+  <p>
+    Dans le secteur de l’informatique, la veille technologique occupe une place
+    particulièrement importante, car les technologies évoluent rapidement. De nouveaux
+    langages, frameworks, logiciels, services cloud ou outils basés sur l’intelligence
+    artificielle apparaissent régulièrement. Sans veille, un développeur ou une
+    entreprise risque de prendre du retard, d’utiliser des solutions dépassées
+    ou de passer à côté d’innovations utiles.
+  </p>
+
+  <p>
+    Réaliser une veille technologique permet donc de rester informé, de mieux
+    comprendre les tendances du marché et d’anticiper les changements. Elle peut
+    aussi aider à comparer plusieurs solutions, à améliorer ses compétences et
+    à prendre de meilleures décisions techniques. Dans le cadre de ma formation,
+    cette veille me permet de relier les apprentissages scolaires aux évolutions
+    concrètes du métier de développeur.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Le sujet de ma veille technologique</h2>
+  <p>
+    Le thème que j’ai choisi pour ma veille est :
+    « L’Intelligence Artificielle est-elle le futur du développement logiciel ? ».
+    J’ai choisi ce sujet car l’intelligence artificielle prend une place de plus en
+    plus importante dans le monde de l’informatique, et plus particulièrement dans
+    les métiers du développement web et logiciel. Aujourd’hui, de nombreux outils
+    sont capables d’aider les développeurs à écrire du code, corriger des erreurs,
+    produire de la documentation ou encore générer des idées de structure pour une
+    application ou un site web.
+  </p>
+
+  <h3>Points positifs</h3>
+  <p>
+    L’intelligence artificielle représente tout d’abord un véritable gain de temps
+    pour les développeurs. Des outils comme ChatGPT, GitHub Copilot ou Gemini peuvent
+    suggérer du code, expliquer une erreur, générer une fonction simple ou aider à
+    comprendre une documentation technique. Cela permet aux professionnels comme aux
+    étudiants de travailler plus rapidement et de se concentrer davantage sur la
+    logique globale d’un projet.
+  </p>
+
+  <p>
+    L’IA peut également faciliter l’apprentissage. Lorsqu’un développeur débute sur
+    un langage ou une technologie, il peut utiliser ces outils comme une aide pour
+    mieux comprendre certaines notions, repérer des erreurs de syntaxe ou obtenir
+    des exemples concrets. Dans ce sens, l’intelligence artificielle peut être vue
+    comme un assistant capable d’accompagner le travail, sans pour autant remplacer
+    totalement les compétences humaines.
+  </p>
+
+  <h3>Points négatifs</h3>
+  <p>
+    Malgré ses avantages, l’IA présente aussi plusieurs limites. Tout d’abord, elle
+    peut produire des réponses inexactes, du code inefficace ou des solutions qui
+    semblent justes mais qui contiennent en réalité des erreurs. Un développeur ne
+    peut donc pas se contenter de copier ce que l’outil propose. Il doit comprendre,
+    tester et vérifier le résultat avant de l’intégrer dans un projet.
+  </p>
+
+  <p>
+    Un autre risque important est la dépendance. Si un développeur utilise
+    systématiquement l’intelligence artificielle pour chaque problème, il peut perdre
+    certaines habitudes essentielles comme la recherche personnelle, la lecture de
+    documentation, l’analyse d’erreurs ou la réflexion algorithmique. À long terme,
+    cela peut fragiliser les bases techniques, surtout chez les personnes en formation.
+  </p>
+
+  <p>
+    Enfin, l’IA peut faire évoluer le métier de développeur. Certaines tâches simples
+    ou répétitives sont déjà de plus en plus automatisées. Cela ne signifie pas
+    nécessairement la disparition du métier, mais plutôt sa transformation. Le rôle
+    du développeur pourrait devenir davantage centré sur la conception, l’architecture,
+    la sécurité, la validation du code, la compréhension du besoin client et le choix
+    des bonnes solutions techniques.
+  </p>
+
+  <h3>Conclusion personnelle</h3>
+  <p>
+    Selon moi, l’intelligence artificielle ne remplacera pas totalement les développeurs,
+    mais elle va clairement transformer leur manière de travailler. Elle devient un
+    outil puissant d’assistance, capable d’augmenter la productivité et d’aider dans
+    certaines tâches techniques. Cependant, elle ne remplace ni la logique humaine,
+    ni l’analyse, ni la capacité à comprendre un besoin précis et à construire une
+    solution adaptée.
+  </p>
+
+  <p>
+    Pour les futurs développeurs, il est donc important de ne pas voir l’IA comme une
+    menace, mais comme une compétence complémentaire à maîtriser. Il faut apprendre à
+    bien l’utiliser, à garder un regard critique sur ses résultats et à continuer à
+    développer de solides bases techniques. À mes yeux, le futur du développement
+    logiciel ne sera pas un monde sans développeurs, mais un monde dans lequel les
+    développeurs travailleront de plus en plus avec l’intelligence artificielle.
+  </p>
+</section>
+
+<section class="section" id="actualites-ia">
+  <h2>Dernières actualités IA & Développement Web</h2>
+  <div class="news-container">
+    <p class="info-text">Chargement des actualités...</p>
+  </div>
+</section>
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const articles = [
-    {
-      title: "IA générative alliée des développeurs, pas un substitut",
-      url: "https://www.lemondeinformatique.fr/actualites/lire-ia-generative-alliee-des-developpeurs-pas-un-substitut-98293.html",
-      img: "lemondeinformatique.png"
-    },
-    {
-      title: "Programmer avec l’IA : simple et risqué",
-      url: "https://lactualite.com/techno/programmer-avec-lia-a-la-fois-simple-et-risque/",
-      img: "lactualite.jpg"
-    },
-    {
-      title: "IA copilote : code & développement web",
-      url: "https://www.blogdumoderateur.com/ia-copilote-code-developpement-web-nouvelle-ere/",
-      img: "blogdumoderateur.jpg"
-    },
-    {
-      title: "IA : mutation invisible du métier de développeur",
-      url: "https://www.informatiquenews.fr/ia-cette-mutation-invisible-qui-transforme-le-metier-de-developpeur-olivier-roger-boond-108528",
-      img: "informatiquenews.jpg"
-    }
-  ];
-
+document.addEventListener("DOMContentLoaded", async () => {
   const container = document.querySelector(".news-container");
 
   if (!container) {
@@ -179,89 +300,81 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  articles.forEach(article => {
-    const card = document.createElement("div");
-    card.className = "news-card";
+  // Remplace par ta nouvelle clé GNews
+  const API_KEY = "e74bd7a81c561fa49c50eee2fed999f5";
 
-    card.innerHTML = `
-      <a href="${article.url}" target="_blank">
-        <img src="${article.img}" alt="${article.title}">
-        <h3>${article.title}</h3>
-      </a>
+  // Requête plus simple et plus robuste
+  const query = encodeURIComponent(
+    '("intelligence artificielle" OR "IA générative" OR "développeur web" OR "développement logiciel")'
+  );
+
+  const fromDate = new Date();
+  fromDate.setDate(fromDate.getDate() - 30);
+
+  const fallbackImage = "https://via.placeholder.com/600x350?text=Actualite+IA";
+
+  const url = `https://gnews.io/api/v4/search?q=${query}&lang=fr&country=fr&max=3&sortby=publishedAt&from=${fromDate.toISOString()}&apikey=${API_KEY}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log("Réponse GNews :", data);
+
+    if (!response.ok) {
+      const apiMessage = data.errors
+        ? data.errors.join(" | ")
+        : data.message || "Erreur inconnue";
+      throw new Error(apiMessage);
+    }
+
+    if (!data.articles || data.articles.length === 0) {
+      container.innerHTML = "<p class='info-text'>Aucune actualité trouvée pour le moment.</p>";
+      return;
+    }
+
+    container.innerHTML = "";
+
+    data.articles.forEach(article => {
+      const title = article.title || "Article sans titre";
+      const link = article.url || "#";
+      const image = article.image || fallbackImage;
+
+      let dateText = "";
+      if (article.publishedAt) {
+        const date = new Date(article.publishedAt);
+        dateText = date.toLocaleDateString("fr-FR", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric"
+        });
+      }
+
+      const card = document.createElement("div");
+      card.className = "news-card";
+
+      card.innerHTML = `
+        <a href="${link}" target="_blank" rel="noopener noreferrer">
+          <img src="${image}" alt="${title}" onerror="this.src='${fallbackImage}'">
+          <h3>${title}</h3>
+          <p class="news-date">${dateText}</p>
+        </a>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Erreur lors du chargement des actualités :", error);
+    container.innerHTML = `
+      <p class="info-text">
+        Impossible de charger les actualités.<br>
+        Détail : ${error.message}
+      </p>
     `;
-
-    container.appendChild(card);
-  });
-
+  }
 });
 </script>
 
-
-<body>
-
-<!-- MENU -->
-<nav>
-  <a href="portfolio.html">Accueil</a>
-  <a href="parcours.html">Parcours</a>
-  <a href="formation.html">Formation</a>
-  <a href="E4.html">Epreuve E4</a>
-  <a href="profil.html">Profil</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<!-- TITRE -->
-<header>
-  <h1>Veille technologique</h1>
-</header>
-
-<!-- CONTENT -->
-<section class="section">
-  <h2>Qu’est-ce qu’une veille technologique</h2>
-  <p>
-    Une veille technologique a pour principe d’identifier ou d’anticiper les innovations
-    par secteurs d’activité. Elle consiste à surveiller l’évolution des technologies,
-    des outils et des pratiques afin de rester informé des changements pouvant impacter
-    un domaine professionnel.
-  </p>
-
-  <p>
-    La veille technologique est un processus systématique de collecte, d’analyse et de
-    diffusion d’informations sur les innovations et les avancées technologiques.
-    Elle permet aux entreprises de rester informées des dernières tendances et de
-    prendre des décisions stratégiques éclairées.
-  </p>
-</section>
-
-<section class="section">
-  <h2>Le sujet de ma veille technologique</h2>
-  <p>
-    Le thème que j’ai choisi pour ma veille est : « L’Intelligence Artificielle est le futur du développement Logiciel ? ».
-  </p>
-  <h3>Points Negatif</h2>
-  <p>
-    Plusieur outils d'IA génératives tel que ChatGPT, Gemini ou d’autres, 
-	joue un rôle de plus en plus important en informatique. 
-	Notament danss le domaine du développement web et Logiciel. Ils nous permettent d'avancer plus rapidement dans les projets
-	des développeurs et de nous faciliter la tâche. 
-  </p>
-  <h3>Points Negatif</h2>
-  <p>
-    Tout comme nous, la technologie et donc l'IA ne cesse d'évoluer. Très bientôt,
-	il sera facile à n'importe quel individu de créer un logiciel simplement à l'aide de l'IA.
-	Très bientôt, le sujet de développeur commencera à s'effacer car la machine effectura l'entierté
-	de la tâche à nôtre place. De plus, les développeur seront tellement dépendant de l'IA qu'ils risques
-	de ne plus se rappeler de simple commande basiques.
-  </p>
-  <h3>Conseil</h2>
-  <p>Pour les jeunes informaticiens interressé par le métier de développeur web, il est vivement
-  recommander de commencer à se spécialisé dans l'Intelligence Artificiel. De ce fait, il nous 
-  sera toujour possible de poursuivre nôtre métier sans risque de se faire écarté par cette dernière.
-</section>
-
-<section class="section" id="actualites-ia">
-  <h2>Dernières actualités IA & Développement Web</h2>
-  <div class="news-container"></div>
-</section>
 </body>
-
 </html>
